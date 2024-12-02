@@ -6,22 +6,22 @@ pipeline{
     }
     stages{
         stage("Intialize the project"){
-            step{
+            steps{
                 echo "this step is to initialize the project  j"     
             }
         }
         stage("Build"){
-            step{
+            steps{
                 echo "this step is to build the project"
             }
         }
         stage("Test"){
-            step{
+            steps{
                 echo "this step is to test the project"
             }
         }
         stage("deploy"){
-            step{
+            steps{
                 echo "this step is to deploy the project147296"
             }
         }
