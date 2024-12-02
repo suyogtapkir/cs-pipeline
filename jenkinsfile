@@ -7,7 +7,7 @@ pipeline{
     stages{
         stage("Intialize the project"){
             step{
-                echo "this step is to initialize the project"     
+                echo "this step is to initialize the project  j"     
             }
         }
         stage("Build"){
