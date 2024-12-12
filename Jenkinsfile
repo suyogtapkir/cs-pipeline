@@ -7,7 +7,10 @@ pipeline{
     stages{
         stage("Intialize the project"){
             steps{
+                script {
+                echo "Brach Name is: ${env.BRANCH_NAME}"
                 echo "this step is to initialize the project  j"     
+                }
             }
         }
         stage("Accept RFC number"){
