@@ -1,3 +1,4 @@
+library identifier: 'shared-lib', retriever: modernSCM([$class: 'GitSCMSource', credentialsId: '', remote: 'https://github.com/suyogtapkir/jenkins-shared-lib.git', traits: [gitBranchDiscovery()]])
 pipeline{
     agent {
         node {
@@ -41,7 +42,7 @@ pipeline{
         }
         stage("deploy"){
             steps{
-                echo "this step is to deploy the project147296"
+                helloWorld()
             }
         }
 
