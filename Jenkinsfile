@@ -11,8 +11,10 @@ pipeline{
             }
         }
         stage("Accept RFC number"){
-            env.RFC=input message: 'Please enter RFC number', ok: 'Proceed:', parameters: [string(defaultValue: 'NA', description: 'RFC will be used to deploy in PROD', name: 'RFC Number')]
-            echo "RFC number is: ${RFC}"
+            steps{
+                env.RFC=input message: 'Please enter RFC number', ok: 'Proceed:', parameters: [string(defaultValue: 'NA', description: 'RFC will be used to deploy in PROD', name: 'RFC Number')]
+                echo "RFC number is: ${RFC}"
+            }
         }
         stage("Build"){
             steps{
