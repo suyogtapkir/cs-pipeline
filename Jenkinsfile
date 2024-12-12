@@ -1,4 +1,4 @@
-library identifier: 'shared-lib@master', retriever: modernSCM([$class: 'GitSCMSource', credentialsId: '', remote: 'https://github.com/suyogtapkir/jenkins-shared-lib.git', traits: [gitBranchDiscovery()]])
+library identifier: 'shared-library@master', retriever: modernSCM([$class: 'GitSCMSource', credentialsId: '', remote: 'https://github.com/suyogtapkir/jenkins-shared-lib.git', traits: [gitBranchDiscovery()]])
 pipeline{
     agent {
         node {
