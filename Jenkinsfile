@@ -10,6 +10,10 @@ pipeline{
                 echo "this step is to initialize the project  j"     
             }
         }
+        stage("Accept RFC number"){
+            env.RFC=input message: 'Please enter RFC number', ok: 'Proceed:', parameters: [string(defaultValue: 'NA', description: 'RFC will be used to deploy in PROD', name: 'RFC Number')]
+            echo "RFC number is: ${RFC}"
+        }
         stage("Build"){
             steps{
                 echo "this step is to build the project"
@@ -27,9 +31,9 @@ pipeline{
         }
 
     }
-    post {
+   post {
         failure {
-		    mail to: 'suyogtapkir1152@gmail.com',
+		    emailext to: 'suyogtapkir1152@gmail.com',
 		    subject: "Failed pipeline: ${currentBuild.fullDisplayName}",
 		    body: "ALARM, Please fix ${env.BUILD_URL}"
 	    }
